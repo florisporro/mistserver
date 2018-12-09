@@ -1,7 +1,7 @@
 <template lang="pug">
 div
   .container#title
-    h1 MistServer
+    h1 MistServer MI
   .container-fluid#lsp
     .row
       #menubar.col-md-2
