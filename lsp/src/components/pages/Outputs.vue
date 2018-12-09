@@ -1,12 +1,12 @@
 <template lang="pug">
-#dashboard.mt-3
+#outputs.mt-3
   .container-fluid
     .row
       .col-md-12
         h2 Outputs
         p
           | Here be all the outputs and connection filters.
-        AddButton output filter
+        AddButton(data-toggle='modal' data-target='#editOutputWindow') output filter
         
         h3.mt-3 Current outputs
         
@@ -15,17 +15,23 @@
             .card-body
               h5.card-title Output filter #1
               p.card-text A description
-              EditButton output filter #1
+              EditButton(data-toggle='modal' data-target='#editOutputWindow') output filter #1
+  .modal.fade#editOutputWindow(tabindex="-1" role="dialog")
+    .modal-dialog(role='document')
+      EditOutput.modal-content
+
 </template>
 
 <script>
   import EditButton from '../_utilities/EditButton';
   import AddButton from '../_utilities/AddButton';
+  import EditOutput from './Edit output';
   
   export default {
     components: {
       EditButton,
-      AddButton
+      AddButton,
+      EditOutput
     }
   }
 </script>
