@@ -23,7 +23,7 @@ body {
 
 #lsp {
   flex: 1 1 auto;
-  background-color: transparentize($mistserverdarkblue, .5);
+  background-color: transparentize($mistserverdarkblue, 0);
 }
 
 h2 {
