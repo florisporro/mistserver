@@ -68,20 +68,11 @@ export default {
   @import './assets/main.scss';
 
   #lsp {
-    background: white;
+    // background: rgba(255,255,255,.3);
   }
 
   #menubar {
     background: rgba(0,0,0,.2);
-  }
-
-  .container#title {
-    margin-top: 2em;
-    h1 {
-      color: white;
-      font-weight: 800;
-      font-family: 'Fira Sans', sans-serif;
-    }
   }
 
 </style>
