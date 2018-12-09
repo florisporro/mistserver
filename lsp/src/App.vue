@@ -1,15 +1,13 @@
 <template lang="pug">
 div
-  .container#title
-    h1 MistServer
+  .container-fluid#title.pt-5
+    h1 MistServer MI {{ serverUrl }}
   .container-fluid#lsp
     .row
       #menubar.col-md-2
         MainMenu
       .col-md-10
         router-view
-        
-    
 </template>
 
 <script>
@@ -42,7 +40,14 @@ export default {
       logdata: []
     }
   },
+  computed: {
+    serverUrl() {
+      return this.$route.query.serverUrl || '';
+    }
+  },
   created: function() {
+    document.title = `MistServer MI${this.$route.query.serverUrl ? ' - ' + this.serverUrl : ''}`;
+
     EventBus.$on('error', error => {
       // Error emits the message as a log and pauses the queue
       EventBus.$emit('log', "ERROR: " + error);
