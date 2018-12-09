@@ -5,7 +5,7 @@
       .col-md-12
         h2 Outputs
         p
-          | Here be all the outputs and connection filters.
+          | Here be all the outputs and connection filters. Yarr.
         AddButton(data-toggle='modal' data-target='#editOutputWindow') output filter
         
         h3.mt-3 Current outputs
@@ -16,8 +16,9 @@
               h5.card-title Output filter #1
               p.card-text A description
               EditButton(data-toggle='modal' data-target='#editOutputWindow') output filter #1
-  .modal.fade#editOutputWindow(tabindex="-1" role="dialog")
-    .modal-dialog(role='document')
+  
+  .modal.fade#editOutputWindow
+    .modal-dialog.modal-dialog-centered
       EditOutput.modal-content
 
 </template>

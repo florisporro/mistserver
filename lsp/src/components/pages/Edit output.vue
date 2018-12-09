@@ -1,15 +1,20 @@
 <template lang="pug">
 #editOutput.mt-3
-  .container-fluid
-    .row
-      .col-md-12
-        h2 Edit output filter
+  h2 Edit output filter
+  form
+    .form-group.row
+      label Human readable name:
+        input(type='text' v-model='name')
+    button.btn.btn-primary Save
 </template>
 
 <script>
   
   export default {
     components: {
+    },
+    methods: {
+      name
     }
   }
 </script>
