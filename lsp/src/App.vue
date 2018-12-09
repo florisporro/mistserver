@@ -2,20 +2,22 @@
 div
   .container#title
     h1 MistServer
-  .container#toolset
+  .container-fluid#lsp
     .row
-      .col-md-8
-        h3 Hello world 3
-        pre
-      .col-md-4
-        button(@click="count").btn.btn-outline-primary Count {{counter}}
-        button(@click="connect").btn.btn-outline-primary Connect to Mistserver
-        Log(:logdata='logdata')
+      #menubar.col-md-2
+        MainMenu
+      .col-md-10
+        router-view
+        
+    
 </template>
 
 <script>
 // Components
 import Log from './components/Log.vue';
+import MainMenu from './components/MainMenu.vue';
+
+// Libraries
 import moment from 'moment';
 import axios from 'axios';
 
@@ -30,7 +32,8 @@ const mist = require('./lib/mistserver');
 export default {
   name: 'app',
   components: {
-    Log
+    Log,
+    MainMenu
   },
   data() {
     return {
@@ -52,22 +55,11 @@ export default {
         type: type || 'none'
       };
       this.logdata.push(new_log);
-      this.$socket.emit('client_log', new_log);
     });
 
     EventBus.$emit('log', "Hello world");
   },
   methods: {
-    count() {
-      this.counter++;
-    },
-    connect() {
-      mistserver.authenticate(
-        'url',
-        'user',
-        'pass'
-      );
-    }
   }
 }
 </script>
@@ -75,10 +67,12 @@ export default {
 <style lang="scss">  
   @import './assets/main.scss';
 
-  .container#toolset {
-    border-left: 10px solid rgb(240,128,128);
+  #lsp {
     background: white;
-    padding: 2em;
+  }
+
+  #menubar {
+    background: rgba(0,0,0,.2);
   }
 
   .container#title {
