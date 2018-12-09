@@ -1,13 +1,39 @@
 <template lang="pug">
-#dashboard.mt-3
+#outputs.mt-3
   .container-fluid
     .row
       .col-md-12
         h2 Outputs
+        p
+          | Here be all the outputs and connection filters. Yarr.
+        AddButton(data-toggle='modal' data-target='#editOutputWindow') output filter
+        
+        h3.mt-3 Current outputs
+        
+        .card-deck
+          .card
+            .card-body
+              h5.card-title Output filter #1
+              p.card-text A description
+              EditButton(data-toggle='modal' data-target='#editOutputWindow') output filter #1
+  
+  .modal.fade#editOutputWindow
+    .modal-dialog.modal-dialog-centered
+      EditOutput.modal-content
+
 </template>
 
 <script>
+  import EditButton from '../_utilities/EditButton';
+  import AddButton from '../_utilities/AddButton';
+  import EditOutput from './Edit output';
+  
   export default {
+    components: {
+      EditButton,
+      AddButton,
+      EditOutput
+    }
   }
 </script>
 
