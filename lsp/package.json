@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "author": "Floris Porro <floris@streammyevent.com>",
   "scripts": {
-    "dev": "webpack-dev-server --hot",
+    "dev": "webpack-dev-server --inline --hot",
     "build": "webpack --progress --hide-modules"
   },
   "nodemonConfig": {

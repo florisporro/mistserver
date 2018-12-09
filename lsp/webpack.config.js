@@ -9,6 +9,9 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'dist.js'
   },
+  devServer: {
+    overlay: true
+  },
   module: {
     rules: [
       {
