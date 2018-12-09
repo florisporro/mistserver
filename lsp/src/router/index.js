@@ -7,6 +7,7 @@ import License from '../components/pages/License'
 import Updates from '../components/pages/Updates'
 import Log from '../components/pages/Log'
 import Statistics from '../components/pages/Statistics'
+import Overview from '../components/pages/Overview'
 import Sources from '../components/pages/Sources'
 import Inputs from '../components/pages/Inputs'
 import Processes from '../components/pages/Processes'
@@ -46,6 +47,11 @@ export default new Router({
       path: '/statistics',
       name: 'Statistics',
       component: Statistics
+    },
+    {
+      path: '/overview',
+      name: 'Overview',
+      component: Overview
     },
     {
       path: '/sources',

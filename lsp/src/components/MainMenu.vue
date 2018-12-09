@@ -7,6 +7,8 @@
     MenuItem(page='/updates' icon="download") Updates
     MenuItem(page='/log' icon="scroll") Log
     MenuItem(page='/statistics' icon="chart-line") Statistics
+  div#navigation.list-group.mb-3.mt-3
+    MenuItem(page='/overview' icon="columns") Overview
 
   div#navigation.list-group.mb-3.mt-3
     MenuItem(page='/sources' icon="video") Sources
